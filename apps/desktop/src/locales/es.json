@@ -1,0 +1,374 @@
+{
+  "app": {
+    "tagline": "Lo ve todo. Protege lo que importa."
+  },
+  "window": {
+    "title": "Heimdall",
+    "dragHint": "Arrastra para mover la ventana · doble clic para maximizar",
+    "minimize": "Minimizar ventana",
+    "maximize": "Maximizar ventana",
+    "restore": "Restaurar ventana",
+    "close": "Cerrar ventana"
+  },
+  "nav": {
+    "overview": "Resumen",
+    "hardware": "Hardware",
+    "processes": "Procesos",
+    "intelligence": "Inteligencia",
+    "blackbox": "Caja negra",
+    "investigations": "Investigaciones",
+    "profiles": "Perfiles",
+    "settings": "Configuración"
+  },
+  "common": {
+    "comingSoon": "Próximamente",
+    "pendingPhase": "Pendiente en una fase posterior",
+    "monitorEmbedded": "Monitor integrado o vía daemon"
+  },
+  "monitor": {
+    "daemonConnected": "Daemon conectado (socket Unix)",
+    "embeddedActive": "Monitor integrado en la app",
+    "unknown": "Telemetría no disponible",
+    "investigationsNote": "Los expedientes persisten en SQLite local con daemon o monitor integrado."
+  },
+  "overview": {
+    "title": "Estado del sistema",
+    "runDiagnostics": "Ejecutar diagnóstico",
+    "runningDiagnostics": "Analizando…",
+    "diagnosticsCompleteNone": "Análisis listo: no hay hallazgos activos con las reglas actuales.",
+    "diagnosticsCompleteSome": "Análisis listo: revisa los hallazgos activos abajo.",
+    "activeFindings": "Diagnósticos activos",
+    "noneActive": "No hay hallazgos activos con las reglas actuales.",
+    "recentIncidents": "Incidentes recientes",
+    "noIncidents": "La Caja negra llegará en la Fase 3. No hay grabaciones todavía.",
+    "activityTitle": "Actividad del sistema",
+    "activityHint": "Últimas 60 muestras (~1 s). Las etiquetas se adaptan para evitar solapamientos.",
+    "metricsSupport": "Métricas de respaldo",
+    "activityProfile": "Perfil de actividad actual: {{name}}. Detalles en Perfiles.",
+    "blackboxLink": "Abre Caja negra para incidentes grabados."
+  },
+  "profiles": {
+    "title": "Perfiles de actividad",
+    "subtitle": "Heimdall infiere cómo usas el equipo. Puedes corregir asociaciones de aplicaciones.",
+    "current": "Perfil activo",
+    "confidence": "Confianza ~{{pct}}%",
+    "learning": "Fase de aprendizaje (sin línea base histórica aún)",
+    "since": "Activo desde",
+    "whyTitle": "Por qué este perfil",
+    "noSignals": "Aún no hay señales suficientes — sigue usando el equipo con Heimdall abierto.",
+    "overrideTitle": "Asociar aplicación",
+    "overrideHint": "Nombre parcial del proceso (p. ej. steam, cursor, blender).",
+    "patternPlaceholder": "nombre del proceso",
+    "saveOverride": "Guardar preferencia",
+    "kinds": {
+      "gaming": "Gaming",
+      "content_creation": "Creación de contenido",
+      "development": "Desarrollo",
+      "general": "Uso general",
+      "idle": "Reposo"
+    },
+    "baselineTitle": "Línea base de este perfil",
+    "baselineLearning": "Recopilando muestras para estimar lo habitual en este perfil.",
+    "baselineSamples": "{{count}} muestras en historial",
+    "baselineMem": "Memoria usada habitual: {{range}}",
+    "baselineCpu": "CPU típica: ~{{pct}} %",
+    "baselineInsufficient": "Datos insuficientes para una línea base fiable en este perfil.",
+    "baselineGpu": "GPU típica: ~{{pct}}%"
+  },
+  "blackbox": {
+    "title": "Caja negra",
+    "subtitle": "Registro local de telemetría e incidentes. Sin inventar causas sin evidencia.",
+    "investigationsLink": "Para reconstruir un proceso ya finalizado (p. ej. ráfagas intermitentes), abre Investigaciones — aquí solo incidentes de diagnóstico automático.",
+    "recording": "Registrando",
+    "stopped": "Detenido",
+    "frames": "Muestras en memoria",
+    "incidents": "Incidentes guardados",
+    "empty": "Aún no hay incidentes persistentes registrados.",
+    "incidentList": "Historial de incidentes",
+    "selectIncident": "Selecciona un incidente para ver la línea temporal.",
+    "samples": "{{pre}} muestras antes · {{post}} después",
+    "incomplete": "captura incompleta",
+    "incidentMarker": "Incidente",
+    "chartCpu": "CPU",
+    "chartMemAvail": "RAM libre (GB)",
+    "chartGpu": "GPU",
+    "exportTechnical": "Exportar informe técnico",
+    "exportHuman": "Exportar resumen (redactado)"
+  },
+  "lifecycle": {
+    "detected": "Detectado",
+    "persistent": "Persistente",
+    "resolved": "Resuelto",
+    "dismissed": "Descartado"
+  },
+  "metrics": {
+    "cpu": "Procesador",
+    "memory": "Memoria RAM",
+    "gpu": "GPU",
+    "vram": "VRAM",
+    "storage": "Almacenamiento",
+    "temperature": "Temperaturas",
+    "unavailable": "No disponible",
+    "free": "libres",
+    "swap": "Swap en uso",
+    "gpuTempUnavailable": "GPU sin sensor"
+  },
+  "gpu": {
+    "hint": {
+      "no_nvidia": "No se detectó GPU NVIDIA.",
+      "no_kernel_module": "El módulo del controlador NVIDIA no está cargado.",
+      "smi_failed": "nvidia-smi no respondió; revisa el controlador.",
+      "no_nvml": "NVML no disponible; se intentará nvidia-smi.",
+      "unknown": "Telemetría GPU no disponible con los proveedores actuales."
+    }
+  },
+  "guardian": {
+    "badge": "El guardián de tu sistema",
+    "lastAnalysis": "Último análisis",
+    "sensorsNote": "Sensores incompletos",
+    "thisMachine": "tu equipo",
+    "ok": {
+      "headline": "Todo bajo control, {{host}}.",
+      "subline": "No he detectado anomalías en los recursos que puedo monitorizar con las reglas actuales."
+    },
+    "partial": {
+      "headline": "Vigilancia parcial, {{host}}.",
+      "subline": "Faltan algunos sensores; no afirmo que todo el sistema esté sano solo porque no hay alertas."
+    },
+    "limited": {
+      "headline": "Aún no tengo telemetría suficiente.",
+      "subline": "Conecta el monitor o espera a que lleguen las primeras muestras."
+    },
+    "issue": {
+      "headline": "He detectado un comportamiento que merece atención.",
+      "subline": "Revisa el diagnóstico y la evidencia antes de actuar."
+    },
+    "gap": {
+      "gpu": "GPU",
+      "cpuTemp": "temperatura CPU"
+    }
+  },
+  "diagnosis": {
+    "facts": "Hechos observados",
+    "dismiss": "Descartar",
+    "recommendations": "Recomendaciones",
+    "limitations": "Limitaciones",
+    "detailLink": "Ver análisis en Inteligencia",
+    "rules": {
+      "memory_pressure": {
+        "title": "Presión de memoria",
+        "explanation": "El sistema muestra poca RAM disponible de forma sostenida y hay actividad de swap o presión según PSI.",
+        "explanationDynamic": "Memoria bajo presión. {{hint}}",
+        "guardianHeadline": "He detectado presión sobre la memoria.",
+        "guardianSubline": "El sistema está recurriendo a memoria de intercambio o a la presión de memoria de forma sostenida. Revisa las aplicaciones que más consumen."
+      },
+      "cpu_saturation": {
+        "title": "Saturación del procesador",
+        "explanation": "El uso de CPU se mantuvo alto durante la ventana configurada.",
+        "guardianHeadline": "Saturación del procesador.",
+        "guardianSubline": "La CPU está muy cargada de forma sostenida; revisa qué procesos concentran el uso."
+      },
+      "storage_pressure": {
+        "title": "Poco espacio en disco",
+        "explanation": "Un volumen supera el umbral de capacidad.",
+        "explanationDynamic": "El volumen {{name}} ({{mount}}) está al {{percent}} % de su capacidad.",
+        "guardianHeadline": "Poco espacio en almacenamiento.",
+        "guardianSubline": "Libera espacio para evitar fallos al escribir o actualizar."
+      },
+      "io_contention": {
+        "title": "Presión de entrada/salida",
+        "explanation": "PSI indica espera sostenida por disco; puede haber copias de seguridad, indexación o transferencias intensas.",
+        "guardianHeadline": "Contención en disco.",
+        "guardianSubline": "El sistema espera demasiado tiempo por E/S. Revisa actividad de disco si puedes hacerlo con seguridad."
+      },
+      "thermal_cpu": {
+        "title": "Temperatura elevada del procesador",
+        "explanation": "La temperatura del CPU se mantuvo alta de forma sostenida.",
+        "guardianHeadline": "El procesador está muy caliente.",
+        "guardianSubline": "Revisa ventilación y carga; una CPU al 100 % durante un render puede ser normal, pero el calor sostenido merece atención."
+      },
+      "thermal_gpu": {
+        "title": "Temperatura elevada de la GPU",
+        "explanation": "La GPU registró temperaturas altas con contexto de uso.",
+        "guardianHeadline": "La GPU está caliente.",
+        "guardianSubline": "Un uso alto en juegos no es un fallo por sí solo; el calor sostenido sí requiere revisión."
+      },
+      "gpu_vram_pressure": {
+        "title": "Presión de VRAM",
+        "explanation": "La memoria de vídeo está muy llena de forma sostenida. Un uso alto de GPU sin VRAM llena puede ser normal (p. ej. juegos).",
+        "guardianHeadline": "Presión en la memoria de vídeo.",
+        "guardianSubline": "Cierra aplicaciones que consuman mucha VRAM si es seguro."
+      },
+      "journal_oom": {
+        "title": "Evento OOM en el sistema",
+        "explanation": "El journal registró falta de memoria u OOM killer.",
+        "guardianHeadline": "El sistema reportó presión crítica de memoria.",
+        "guardianSubline": "Revisa Caja negra y los procesos activos; no asumimos qué aplicación falló sin más datos."
+      },
+      "journal_nvrm": {
+        "title": "Evento NVRM en el journal",
+        "explanation": "El controlador NVIDIA dejó una traza en el journal.",
+        "guardianHeadline": "Señal del controlador gráfico en registros.",
+        "guardianSubline": "Correlaciona con temperatura y diagnósticos GPU si están disponibles."
+      },
+      "journal_io": {
+        "title": "Error de E/S en el journal",
+        "explanation": "El journal reportó errores de entrada/salida en disco.",
+        "guardianHeadline": "Actividad anómala de almacenamiento.",
+        "guardianSubline": "Comprueba espacio libre y salud del disco con herramientas del sistema."
+      },
+      "gpu_driver": {
+        "title": "Eventos del controlador gráfico",
+        "explanation": "El journal del sistema registró mensajes del controlador NVIDIA (NVRM/Xid). No se trata solo de un uso alto de GPU.",
+        "guardianHeadline": "Señales del controlador gráfico.",
+        "guardianSubline": "Revisa temperatura, drivers y la Caja negra si el problema se repite."
+      }
+    }
+  },
+  "hardware": {
+    "title": "Hardware",
+    "subtitle": "Resumen estático del equipo detectado al arranque.",
+    "loading": "Cargando hardware…",
+    "host": "Equipo",
+    "liveNote": "Muestra en vivo",
+    "storageTitle": "Almacenamiento",
+    "sensorsTitle": "Sensores en vivo",
+    "gpuListTitle": "Tarjetas gráficas",
+    "storageMountsGrouped": "Puntos de montaje (misma capacidad): {{mounts}}",
+    "storageDevicesGrouped": "Volúmenes: {{names}}"
+  },
+  "processes": {
+    "title": "Procesos",
+    "subtitle": "Top por CPU y memoria (muestra puntual, sin historial completo).",
+    "memoryHint": "La columna Memoria es RSS residente por proceso (sysinfo). Páginas compartidas pueden repetirse entre procesos; no sumes las filas como total exclusivo.",
+    "colProcess": "Proceso",
+    "colPid": "PID",
+    "colCpu": "CPU",
+    "colMemory": "Memoria (RSS)",
+    "byCpu": "Por CPU",
+    "byMemory": "Por memoria"
+  },
+  "intelligence": {
+    "title": "Inteligencia",
+    "subtitle": "Reglas con evidencia primero; asistente local opcional vía Ollama.",
+    "none": "Ninguna regla coincide con el estado actual.",
+    "assistantTitle": "Asistente (Ollama)",
+    "assistantHint": "Solo usa diagnósticos, perfil e incidentes de la Caja negra. No ejecuta comandos.",
+    "refreshOllama": "Comprobar Ollama",
+    "model": "Modelo",
+    "questionPlaceholder": "¿Qué significan los hallazgos actuales?",
+    "ask": "Preguntar",
+    "asking": "Generando…",
+    "queuePending": "Pregunta en cola",
+    "ollamaUnreachable": "No se pudo conectar con Ollama. Comprueba que el servicio esté activo y la URL en Configuración.",
+    "ollamaErrorDetail": "No se pudo completar la consulta al asistente.",
+    "technicalDetail": "Detalle técnico"
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Preferencias de la interfaz y del asistente local.",
+    "appearance": "Apariencia",
+    "reducedGlass": "Reducir efecto cristal (mejor rendimiento)",
+    "language": "Idioma",
+    "ollamaTitle": "Ollama (asistente)",
+    "ollamaHint": "Opcional. Sin Ollama, Heimdall sigue mostrando diagnósticos deterministas.",
+    "ollamaUrl": "URL base",
+    "preferredModel": "Modelo preferido (vacío = primer modelo disponible)",
+    "deferWhenBlocked": "Encolar preguntas si gaming o GPU ocupada",
+    "save": "Guardar",
+    "saved": "Guardado"
+  },
+  "severity": {
+    "info": "Información",
+    "warning": "Advertencia",
+    "critical": "Crítico"
+  },
+  "status": {
+    "supported": "Disponible",
+    "unavailable": "No disponible",
+    "unsupported": "No compatible",
+    "permission_denied": "Sin permiso",
+    "stale": "Desactualizado"
+  },
+  "chart": {
+    "cpu": "CPU",
+    "memory": "Memoria"
+  },
+  "investigations": {
+    "title": "Centro de investigación",
+    "subtitle": "Expedientes deterministas reconstruidos desde telemetría histórica. Puedes explorar procesos que ya finalizaron.",
+    "anomalyDisclaimer": "Una anomalía describe desviación de actividad; no implica malware ni amenaza de seguridad por sí sola.",
+    "refresh": "Actualizar lista",
+    "search": "Buscar proceso, PID o ID…",
+    "filterLevel": "Clasificación",
+    "filterState": "Estado",
+    "filterAll": "Todas",
+    "loading": "Cargando expedientes…",
+    "empty": "No hay investigaciones que coincidan.",
+    "select": "Selecciona un expediente en la lista.",
+    "loadingDetail": "Cargando expediente…",
+    "detailMissing": "No se pudo cargar el expediente.",
+    "error": "Error",
+    "unknownProcess": "Proceso",
+    "listMeta": "Atribución {{attr}} · Impacto {{impact}} · {{state}}",
+    "deterministicConclusion": "Conclusión determinista del motor",
+    "level": "Clasificación",
+    "attribution": "Atribución",
+    "impact": "Impacto sistémico",
+    "state": "Estado",
+    "identity": "Identidad del proceso",
+    "processName": "Nombre",
+    "startTicks": "starttime (ticks)",
+    "evidence": "Evidencias y justificación",
+    "coverage": "Cobertura: {{avail}}/{{total}} muestras ({{pct}} % disponibles)",
+    "exitBetweenSamples": "Salida observada entre {{last}} y {{absent}}",
+    "alternatives": "Procesos alternativos en la ventana",
+    "impactSection": "Evaluación de impacto",
+    "export": "Exportar JSON",
+    "replayTitle": "Reproducción temporal",
+    "replayEmpty": "Sin puntos temporales en este expediente.",
+    "chartGlobalCpu": "CPU global (máquina)",
+    "chartCoreCpu": "CPU proceso (un núcleo)",
+    "chartMachineCpu": "CPU proceso (máquina)",
+    "metricGlobal": "CPU global",
+    "metricCore": "CPU un núcleo",
+    "metricMachine": "CPU máquina",
+    "processState": "Estado muestra proceso",
+    "aiExplain": "Explicación opcional (Ollama)",
+    "aiDisclaimer": "La IA no modifica evidencias ni eleva la confianza de atribución.",
+    "aiAsk": "Explicar expediente",
+    "aiLoading": "Consultando…",
+    "aiEmpty": "Sin respuesta del asistente.",
+    "levels": {
+      "event": "Evento",
+      "anomaly": "Anomalía",
+      "incident": "Incidente"
+    },
+    "states": {
+      "open": "Abierta",
+      "closed": "Cerrada",
+      "incomplete": "Incompleta"
+    },
+    "confidence": {
+      "high": "Alta",
+      "medium": "Media",
+      "insufficient": "Insuficiente"
+    },
+    "impactLevels": {
+      "none": "Ninguno",
+      "minor": "Menor",
+      "major": "Mayor"
+    },
+    "cpuState": {
+      "available": "Muestra disponible",
+      "unavailable": "Muestra no disponible",
+      "not_tracked": "Fuera del seguimiento",
+      "exited": "Proceso finalizado"
+    }
+  },
+  "sidebar": {
+    "monitoring": "Monitorización",
+    "collapse": "Contraer",
+    "expand": "Expandir"
+  }
+}

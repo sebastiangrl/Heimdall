@@ -1,0 +1,12 @@
+=== 01_daemon_idle (300s) ===
+2026-11-23T01:31:12.722252Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+daemon_pid=81631
+daemon: n=0
+db_bytes_start=59670528 db_bytes_end=60940288 delta=1269760
+=== 02_daemon_with_ui (300s) ===
+2026-11-23T01:36:15.758513Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+
+(heimdall-desktop:88109): Gtk-WARNING **: 20:36:17.851: gtk_window_set_titlebar() called on a realized window
+
+(heimdall-desktop:88109): libayatana-appindicator-WARNING **: 20:36:18.554: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
+daemon_pid=88091 desktop_pid=88109

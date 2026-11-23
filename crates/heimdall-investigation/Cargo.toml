@@ -1,0 +1,21 @@
+[package]
+name = "heimdall-investigation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Motor determinista de investigación e incidentes intermitentes"
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+heimdall-blackbox = { path = "../heimdall-blackbox" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+rusqlite = { workspace = true }
+dirs = "6"
+
+[dev-dependencies]
+tempfile = "3"

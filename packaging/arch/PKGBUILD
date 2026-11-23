@@ -1,0 +1,47 @@
+# Build desde un clon local (CachyOS / Arch). No sube a AUR automáticamente.
+#   cd /ruta/a/Heimdall/packaging/arch
+#   makepkg -si
+#
+# Requiere: base-devel, openssl, gtk3, webkit2gtk-4.1, libappindicator-gtk3, librsvg, nodejs, npm
+
+pkgname=heimdall
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Monitor local con diagnóstico y Caja negra (Project Asgard)"
+arch=('x86_64')
+url="https://github.com/sebastiangrl/Heimdall"
+license=('MIT')
+depends=('gtk3' 'webkit2gtk-4.1' 'libappindicator-gtk3' 'librsvg')
+makedepends=('cargo' 'rustc' 'nodejs' 'npm' 'git')
+options=('!strip' '!debug')
+source=()
+sha256sums=()
+
+prepare() {
+  cp -a "${startdir}/../.." "${srcdir}/heimdall-src"
+  cd "${srcdir}/heimdall-src"
+  export CARGO_TARGET_DIR="${srcdir}/.cargo-target"
+  cd apps/desktop
+  npm ci || npm install
+  npm run build
+}
+
+build() {
+  cd "${srcdir}/heimdall-src"
+  export CARGO_TARGET_DIR="${srcdir}/.cargo-target"
+  cargo build --release -p heimdall-daemon -p heimdall-desktop
+  cd apps/desktop
+  npm run tauri build -- --bundles deb 2>/dev/null || npm run tauri build
+}
+
+package() {
+  cd "${srcdir}/heimdall-src"
+  install -Dm755 "${srcdir}/.cargo-target/release/heimdall-desktop" "${pkgdir}/usr/bin/heimdall-desktop"
+  install -Dm755 "${srcdir}/.cargo-target/release/heimdall-daemon" "${pkgdir}/usr/bin/heimdall-daemon"
+  install -Dm644 "${srcdir}/heimdall-src/packaging/heimdall.desktop" \
+    "${pkgdir}/usr/share/applications/com.asgard.heimdall.desktop"
+  install -Dm644 "${srcdir}/heimdall-src/apps/desktop/src-tauri/icons/128x128.png" \
+    "${pkgdir}/usr/share/icons/hicolor/128x128/apps/com.asgard.heimdall.png"
+  install -Dm644 "${srcdir}/heimdall-src/packaging/systemd/heimdall-daemon.service" \
+    "${pkgdir}/usr/lib/systemd/user/heimdall-daemon.service"
+}

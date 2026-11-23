@@ -1,0 +1,15 @@
+[workspace]
+
+[package]
+name = "phantom"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+libc = "0.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

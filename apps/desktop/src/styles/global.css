@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-deep: #09090d;
+  --color-bg-secondary: #100c16;
+  --color-violet: #a855f7;
+  --color-violet-deep: #7c3aed;
+  --color-pink: #ec4899;
+  --color-lavender: #e9d5ff;
+  --color-text-primary: #f5f0fa;
+  --color-text-secondary: #a69bb4;
+  --color-healthy: #61d6a5;
+  --color-warning: #f4c77a;
+  --color-critical: #ff667d;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-glass: 24px;
+  --radius-window: 24px;
+}
+
+:root {
+  color-scheme: dark;
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-bg-strong: rgba(168, 85, 247, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-inner: rgba(255, 255, 255, 0.04);
+  --ambient-violet: rgba(124, 58, 237, 0.22);
+  --ambient-pink: rgba(236, 72, 153, 0.16);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+html.window-frame,
+html.window-frame body {
+  background: transparent;
+}
+
+.app-shell {
+  height: 100%;
+  min-height: 100%;
+}
+
+html.window-frame:not(.window-maximized) .app-shell {
+  border-radius: var(--radius-window);
+  overflow: hidden;
+  background: var(--color-bg-deep);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 28px 72px rgba(0, 0, 0, 0.55);
+}
+
+html.window-frame.window-maximized .app-shell {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.reduced-glass {
+  --glass-bg: rgba(33, 21, 41, 0.92);
+  --glass-bg-strong: rgba(33, 21, 41, 0.96);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+body.reduced-glass .glass-panel,
+body.reduced-glass .glass-panel-strong {
+  backdrop-filter: none !important;
+}
+
+.app-backdrop {
+  background:
+    radial-gradient(ellipse 95% 70% at 0% -10%, var(--ambient-violet), transparent 50%),
+    radial-gradient(ellipse 80% 55% at 100% 0%, var(--ambient-pink), transparent 46%),
+    radial-gradient(ellipse 55% 45% at 48% 105%, rgba(168, 85, 247, 0.08), transparent 58%),
+    var(--color-bg-deep);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-glass);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 var(--glass-inner);
+}
+
+@supports ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  body:not(.reduced-glass) .glass-panel {
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  }
+}
+
+.glass-panel-strong {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    var(--glass-bg-strong)
+  );
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-glass);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+  body:not(.reduced-glass) .glass-panel-strong {
+    backdrop-filter: blur(16px) saturate(1.12);
+    -webkit-backdrop-filter: blur(16px) saturate(1.12);
+  }
+}
+
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  body:not(.reduced-glass) .window-chrome {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+.glass-accent {
+  border-color: rgba(168, 85, 247, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(236, 72, 153, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.btn-secondary,
+.btn-ghost {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  transition: background-color 0.15s ease;
+}
+
+.btn-secondary {
+  background: rgba(168, 85, 247, 0.12);
+}
+
+.btn-secondary:hover {
+  background: rgba(168, 85, 247, 0.22);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

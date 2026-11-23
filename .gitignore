@@ -1,0 +1,16 @@
+/target
+.cargo-target/
+**/.cargo-target/
+/dist
+**/node_modules
+apps/desktop/dist
+apps/desktop/src-tauri/target
+.env
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+.directory
+*.tsbuildinfo
+docs/experiments/.verify-*.json
+.tmp/

@@ -1,0 +1,14 @@
+[package]
+name = "heimdall-diagnostics"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+heimdall-profiles = { path = "../heimdall-profiles" }
+chrono = { workspace = true }
+serde = { workspace = true }
+uuid = { workspace = true }

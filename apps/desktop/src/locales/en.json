@@ -1,0 +1,213 @@
+{
+  "app": {
+    "tagline": "See everything. Protect what matters."
+  },
+  "nav": {
+    "overview": "Overview",
+    "hardware": "Hardware",
+    "processes": "Processes",
+    "intelligence": "Intelligence",
+    "blackbox": "Black Box",
+    "investigations": "Investigations",
+    "profiles": "Profiles",
+    "settings": "Settings"
+  },
+  "common": {
+    "comingSoon": "Coming soon",
+    "pendingPhase": "Planned for a later phase",
+    "monitorEmbedded": "Embedded monitor or daemon"
+  },
+  "monitor": {
+    "daemonConnected": "Daemon connected (Unix socket)",
+    "embeddedActive": "Embedded in-app monitor",
+    "unknown": "Telemetry unavailable",
+    "investigationsNote": "Dossiers are stored in local SQLite with either the daemon or embedded monitor."
+  },
+  "overview": {
+    "title": "System health",
+    "runDiagnostics": "Run diagnostics",
+    "runningDiagnostics": "Analyzing…",
+    "diagnosticsCompleteNone": "Analysis complete: no active findings with current rules.",
+    "diagnosticsCompleteSome": "Analysis complete: see active findings below.",
+    "daemonEmbedded": "Embedded monitor (Phase 1)",
+    "noFakeScore": "Status is derived from live telemetry, not a fabricated health percentage.",
+    "activeFindings": "Active findings",
+    "noneYet": "No diagnoses yet — diagnostic engine arrives in Phase 2.",
+    "noneActive": "No active findings — rules run on each telemetry sample.",
+    "recentIncidents": "Recent incidents",
+    "noIncidents": "Black Box recording starts in Phase 3.",
+    "activityTitle": "System activity",
+    "activityHint": "Last ~60 samples (~1 s). Axis labels adapt to avoid overlap.",
+    "metricsSupport": "Supporting metrics",
+    "activityProfile": "Current activity profile: {{name}}. See Profiles for details.",
+    "blackboxLink": "Open Black Box for recorded diagnostic incidents."
+  },
+  "profiles": {
+    "title": "Activity profiles",
+    "subtitle": "Heimdall infers how you use the machine. You can override app associations.",
+    "current": "Active profile",
+    "confidence": "Confidence ~{{pct}}%",
+    "learning": "Learning phase (no historical baseline yet)",
+    "since": "Active since",
+    "whyTitle": "Why this profile",
+    "noSignals": "Not enough signals yet — keep using the machine with Heimdall open.",
+    "overrideTitle": "Associate application",
+    "overrideHint": "Partial process name (e.g. steam, cursor, blender).",
+    "patternPlaceholder": "process name",
+    "saveOverride": "Save preference",
+    "kinds": {
+      "gaming": "Gaming",
+      "content_creation": "Content creation",
+      "development": "Development",
+      "general": "General use",
+      "idle": "Idle"
+    },
+    "baselineTitle": "Baseline for this profile",
+    "baselineLearning": "Collecting samples to estimate what is typical for this profile.",
+    "baselineSamples": "{{count}} samples in history",
+    "baselineMem": "Typical memory use: {{range}}",
+    "baselineCpu": "Typical CPU: ~{{pct}}%",
+    "baselineInsufficient": "Insufficient data for a reliable baseline on this profile.",
+    "baselineGpu": "Typical GPU: ~{{pct}}%"
+  },
+  "blackbox": {
+    "title": "Black Box",
+    "subtitle": "Local telemetry and incident log. No invented causes without evidence.",
+    "investigationsLink": "To reconstruct a process that already exited (e.g. intermittent bursts), open Investigations — this view is for automatic diagnostic incidents only.",
+    "recording": "Recording",
+    "stopped": "Stopped",
+    "frames": "In-memory samples",
+    "incidents": "Stored incidents",
+    "empty": "No persistent incidents recorded yet.",
+    "incidentList": "Incident history",
+    "selectIncident": "Select an incident to view the timeline.",
+    "samples": "{{pre}} samples before · {{post}} after",
+    "incomplete": "incomplete capture"
+  },
+  "hardware": {
+    "title": "Hardware",
+    "subtitle": "Static discovery and live sensors.",
+    "loading": "Loading hardware…",
+    "host": "Host",
+    "liveNote": "Live snapshot",
+    "storageTitle": "Storage",
+    "sensorsTitle": "Live sensors",
+    "gpuListTitle": "Graphics",
+    "storageMountsGrouped": "Mount points (shared capacity): {{mounts}}",
+    "storageDevicesGrouped": "Volumes: {{names}}"
+  },
+  "processes": {
+    "title": "Processes",
+    "subtitle": "Top by CPU and memory (point-in-time sample, not full history).",
+    "memoryHint": "Memory is per-process resident RSS (sysinfo). Shared pages may appear in multiple rows; do not sum rows as exclusive total usage.",
+    "colProcess": "Process",
+    "colPid": "PID",
+    "colCpu": "CPU",
+    "colMemory": "Memory (RSS)",
+    "byCpu": "By CPU",
+    "byMemory": "By memory"
+  },
+  "metrics": {
+    "cpu": "CPU",
+    "memory": "Memory",
+    "gpu": "GPU",
+    "temperature": "Temperature",
+    "unavailable": "Unavailable",
+    "swap": "Swap used"
+  },
+  "intelligence": {
+    "title": "Intelligence",
+    "subtitle": "Evidence-first rules; optional local assistant via Ollama.",
+    "none": "No active findings match the configured rules right now.",
+    "assistantTitle": "Assistant (Ollama)",
+    "assistantHint": "Optional. Without Ollama, Heimdall still shows deterministic diagnostics.",
+    "refreshOllama": "Refresh status",
+    "model": "Model",
+    "question": "Question",
+    "ask": "Ask",
+    "asking": "Asking…",
+    "queuePending": "Question queued",
+    "ollamaUnreachable": "Could not reach Ollama. Check that the service is running and the URL in Settings.",
+    "ollamaErrorDetail": "Could not complete the assistant request.",
+    "technicalDetail": "Technical detail"
+  },
+  "status": {
+    "supported": "Live",
+    "unavailable": "Unavailable",
+    "unsupported": "Unsupported",
+    "permissionDenied": "Permission denied",
+    "stale": "Stale"
+  },
+  "investigations": {
+    "title": "Investigation Center",
+    "subtitle": "Deterministic dossiers rebuilt from historical telemetry. You can explore processes that have already exited.",
+    "anomalyDisclaimer": "An anomaly describes activity deviation; it does not imply malware or a security threat on its own.",
+    "refresh": "Refresh list",
+    "search": "Search process, PID or ID…",
+    "filterLevel": "Classification",
+    "filterState": "State",
+    "filterAll": "All",
+    "loading": "Loading dossiers…",
+    "empty": "No investigations match.",
+    "select": "Select a dossier from the list.",
+    "loadingDetail": "Loading dossier…",
+    "detailMissing": "Could not load dossier.",
+    "error": "Error",
+    "unknownProcess": "Process",
+    "listMeta": "Attribution {{attr}} · Impact {{impact}} · {{state}}",
+    "deterministicConclusion": "Deterministic engine conclusion",
+    "level": "Classification",
+    "attribution": "Attribution",
+    "impact": "System impact",
+    "state": "State",
+    "identity": "Process identity",
+    "processName": "Name",
+    "startTicks": "starttime (ticks)",
+    "evidence": "Evidence and rationale",
+    "coverage": "Coverage: {{avail}}/{{total}} samples ({{pct}}% available)",
+    "exitBetweenSamples": "Exit observed between {{last}} and {{absent}}",
+    "alternatives": "Alternative processes in the window",
+    "impactSection": "Impact assessment",
+    "export": "Export JSON",
+    "replayTitle": "Temporal replay",
+    "replayEmpty": "No timeline points in this dossier.",
+    "chartGlobalCpu": "Global CPU (machine)",
+    "chartCoreCpu": "Process CPU (one core)",
+    "chartMachineCpu": "Process CPU (machine)",
+    "metricGlobal": "Global CPU",
+    "metricCore": "One-core CPU",
+    "metricMachine": "Machine CPU",
+    "processState": "Process sample state",
+    "aiExplain": "Optional explanation (Ollama)",
+    "aiDisclaimer": "AI does not modify evidence or raise attribution confidence.",
+    "aiAsk": "Explain dossier",
+    "aiLoading": "Asking…",
+    "aiEmpty": "No assistant response.",
+    "levels": {
+      "event": "Event",
+      "anomaly": "Anomaly",
+      "incident": "Incident"
+    },
+    "states": {
+      "open": "Open",
+      "closed": "Closed",
+      "incomplete": "Incomplete"
+    },
+    "confidence": {
+      "high": "High",
+      "medium": "Medium",
+      "insufficient": "Insufficient"
+    },
+    "impactLevels": {
+      "none": "None",
+      "minor": "Minor",
+      "major": "Major"
+    },
+    "cpuState": {
+      "available": "Sample available",
+      "unavailable": "Sample unavailable",
+      "not_tracked": "Not tracked",
+      "exited": "Process exited"
+    }
+  }
+}

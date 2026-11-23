@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Heimdall — QA visual</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f0a14; color: #f5f0fa; margin: 2rem; max-width: 920px; }
+    h1 { color: #c4b5fd; font-weight: 600; }
+    h2 { color: #a855f7; margin-top: 2rem; font-size: 1.1rem; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .ok { color: #4ade80; }
+    .note { font-size: 0.85rem; color: #a69bb4; }
+    .mock { height: 120px; background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(236,72,153,0.1)); border-radius: 12px; margin-top: 0.5rem; display:flex; align-items:center; justify-content:center; color:#a69bb4; font-size:0.8rem; }
+  </style>
+</head>
+<body>
+  <h1>Heimdall — últimas comprobaciones visuales</h1>
+  <p class="note">2026-11-23 · Sin nuevas funcionalidades</p>
+
+  <h2>1. RSS (sysinfo = VmRSS × 1024)</h2>
+  <div class="card">
+    <table>
+      <tr><th>PID</th><th>Proceso</th><th>ps KiB</th><th>/proc VmRSS</th><th></th></tr>
+      <tr><td>2960</td><td>brave</td><td>788960</td><td>788960</td><td class="ok">OK</td></tr>
+      <tr><td>2197</td><td>brave</td><td>550552</td><td>550552</td><td class="ok">OK</td></tr>
+      <tr><td>18194</td><td>electron</td><td>548680</td><td>548680</td><td class="ok">OK</td></tr>
+      <tr><td>2009</td><td>brave</td><td>468912</td><td>468912</td><td class="ok">OK</td></tr>
+    </table>
+    <p class="note">Valores repetidos entre PID distintos = RSS independiente; no sumar filas como total exclusivo.</p>
+  </div>
+
+  <h2>2. Resumen (mock)</h2>
+  <div class="card">
+    <strong>Actividad del sistema</strong>
+    <p class="note">Últimas 60 muestras — un solo bloque título + gráfico</p>
+    <div class="mock">Gráfico CPU / memoria</div>
+  </div>
+
+  <h2>3. Hardware — almacenamiento agrupado (mock)</h2>
+  <div class="card">
+    <p>1,2 TiB usados / 2 TiB totales</p>
+    <p class="note">Puntos de montaje: / · /home · /mnt/datos</p>
+  </div>
+
+  <h2>4. Perfiles</h2>
+  <div class="card">
+    <p>Datos insuficientes para línea base (sin NaN en UI)</p>
+  </div>
+
+  <h2>5. Expediente phantom be4ff71c</h2>
+  <div class="card">
+    <p>Replay: 71 puntos · 23 picos &gt;300% núcleo · 6 pausas ~0%</p>
+    <p class="note">Orden UI: conclusión → replay → identidad</p>
+    <div class="mock">Incident Replay (antes de identidad)</div>
+  </div>
+</body>
+</html>

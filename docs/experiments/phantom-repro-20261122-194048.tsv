@@ -1,0 +1,9 @@
+phase	threads	run	pid	accepted	burst_hits	level	impact	state
+thread_sweep	1	1	75755	1	4	event	none	closed
+thread_sweep	2	1	75910	1	5	event	none	closed
+thread_sweep	4	1	76161	1	4	anomaly	none	closed
+standard_4t	4	1	76385	1	4	anomaly	none	closed
+standard_4t	4	2	76700	1	4	anomaly	none	closed
+standard_4t	4	3	76776	1	4	anomaly	none	closed
+standard_4t	4	4	76926	1	4	event	none	closed
+standard_4t	4	5	77075	1	5	event	none	closed

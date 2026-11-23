@@ -1,0 +1,21 @@
+[package]
+name = "heimdall-telemetry"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+heimdall-blackbox = { path = "../heimdall-blackbox" }
+heimdall-profiles = { path = "../heimdall-profiles" }
+heimdall-intelligence = { path = "../heimdall-intelligence" }
+heimdall-diagnostics = { path = "../heimdall-diagnostics" }
+heimdall-linux = { path = "../heimdall-linux" }
+heimdall-investigation = { path = "../heimdall-investigation" }
+tracing = { workspace = true }
+uuid = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }

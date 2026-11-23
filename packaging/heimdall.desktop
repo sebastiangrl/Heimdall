@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Heimdall
+GenericName=Asistente del sistema
+Comment=Lo ve todo. Protege lo que importa.
+Exec=heimdall-desktop
+TryExec=heimdall-desktop
+Icon=com.asgard.heimdall
+StartupWMClass=Heimdall
+StartupNotify=true
+Terminal=false
+Categories=System;Monitor;
+Keywords=monitor;diagnostics;system;
+X-GTK-Application-ID=com.asgard.heimdall

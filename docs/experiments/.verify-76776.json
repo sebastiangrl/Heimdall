@@ -1,0 +1,23 @@
+{
+  "threshold_core": 70.0,
+  "min_hits": 4,
+  "window_secs_hint": 20,
+  "match": {
+    "id": "9517130b-2dec-421c-a0fc-fbba5e91ff96",
+    "rowid": null,
+    "pid": 76776,
+    "name": "phantom",
+    "start_time_ticks": 3933757,
+    "level": "anomaly",
+    "state": "closed",
+    "confidence": "high",
+    "impact": "none",
+    "burst_hits_recorded": 4,
+    "samples_core_ge_threshold": 29,
+    "process_samples": 35,
+    "coverage": null,
+    "exit": null,
+    "updated_at": "2026-11-23T00:48:35.801644327+00:00"
+  },
+  "accepted": true
+}

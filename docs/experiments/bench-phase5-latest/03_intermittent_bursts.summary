@@ -1,0 +1,4 @@
+=== 03_intermittent_bursts (300s) ===
+daemon_pid=114986
+daemon: n=297 mean_one_core_pct=6.63 p95=9.00 max=11.00 machine_mean=0.552 rss_mean=102983 max_rss=106208
+db_bytes_delta=11702272

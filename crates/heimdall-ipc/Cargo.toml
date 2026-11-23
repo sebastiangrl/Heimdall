@@ -1,0 +1,19 @@
+[package]
+name = "heimdall-ipc"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+heimdall-blackbox = { path = "../heimdall-blackbox" }
+heimdall-core = { path = "../heimdall-core" }
+heimdall-profiles = { path = "../heimdall-profiles" }
+heimdall-telemetry = { path = "../heimdall-telemetry" }
+heimdall-investigation = { path = "../heimdall-investigation" }
+heimdall-intelligence = { path = "../heimdall-intelligence" }
+dirs = "6"
+libc = "0.2"
+serde = { workspace = true }
+serde_json = { workspace = true }

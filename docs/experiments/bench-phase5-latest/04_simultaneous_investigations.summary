@@ -1,0 +1,4 @@
+=== 04_simultaneous_investigations (300s) ===
+daemon_pid=116229
+daemon: n=297 mean_one_core_pct=5.66 p95=8.00 max=10.00 machine_mean=0.471 rss_mean=114270 max_rss=115520
+db_bytes_delta=823296

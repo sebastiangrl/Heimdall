@@ -1,0 +1,38 @@
+=== 01_daemon_idle (300s) ===
+2026-11-23T02:17:06.952262Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+daemon_pid=109403
+daemon: n=297 mean_one_core_pct=5.33 p95=7.00 max=9.00 machine_mean=0.444 rss_mean=98308 max_rss=102300
+db_bytes_start=68272128 db_bytes_end=69615616 delta=1343488
+=== 02_daemon_with_ui (300s) ===
+2026-11-23T02:22:10.489232Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+
+(heimdall-desktop:110917): Gtk-WARNING **: 21:22:12.193: gtk_window_set_titlebar() called on a realized window
+
+(heimdall-desktop:110917): libayatana-appindicator-WARNING **: 21:22:12.307: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
+daemon_pid=110899 desktop_pid=110917
+daemon: n=298 mean_one_core_pct=5.34 p95=6.00 max=28.00 machine_mean=0.445 rss_mean=99575 max_rss=103480
+desktop: n=298 mean_one_core_pct=10.78 p95=25.00 max=41.00 machine_mean=0.898 rss_mean=200272 max_rss=205396
+db_bytes_delta=188416
+=== 03_intermittent_bursts (300s) ===
+2026-11-23T02:27:18.086792Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+daemon_pid=114986
+daemon: n=297 mean_one_core_pct=6.63 p95=9.00 max=11.00 machine_mean=0.552 rss_mean=102983 max_rss=106208
+db_bytes_delta=11702272
+=== 04_simultaneous_investigations (300s) ===
+2026-11-23T02:32:35.326733Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+daemon_pid=116229
+daemon: n=297 mean_one_core_pct=5.66 p95=8.00 max=10.00 machine_mean=0.471 rss_mean=114270 max_rss=115520
+db_bytes_delta=823296
+Resultados en /tmp/heimdall-bench-phase5-20261122-211705
+total 56
+drwxr-xr-x  2 sebastian sebastian  220 nov 22 21:32 .
+drwxrwxrwt 24 root      root      1400 nov 22 21:37 ..
+-rw-r--r--  1 sebastian sebastian  212 nov 22 21:22 01_daemon_idle.summary
+-rw-r--r--  1 sebastian sebastian 4184 nov 22 21:22 01_daemon.tsv
+-rw-r--r--  1 sebastian sebastian 4361 nov 22 21:27 02_daemon.tsv
+-rw-r--r--  1 sebastian sebastian  306 nov 22 21:27 02_daemon_with_ui.summary
+-rw-r--r--  1 sebastian sebastian 4668 nov 22 21:27 02_desktop.tsv
+-rw-r--r--  1 sebastian sebastian 4579 nov 22 21:32 03_daemon.tsv
+-rw-r--r--  1 sebastian sebastian  186 nov 22 21:32 03_intermittent_bursts.summary
+-rw-r--r--  1 sebastian sebastian 4828 nov 22 21:37 04_daemon.tsv
+-rw-r--r--  1 sebastian sebastian  192 nov 22 21:37 04_simultaneous_investigations.summary

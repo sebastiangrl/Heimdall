@@ -1,0 +1,26 @@
+[package]
+name = "heimdall-daemon"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "heimdall-daemon"
+path = "src/main.rs"
+
+[[example]]
+name = "bench_embedded"
+path = "examples/bench_embedded.rs"
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+heimdall-ipc = { path = "../heimdall-ipc" }
+heimdall-profiles = { path = "../heimdall-profiles" }
+heimdall-telemetry = { path = "../heimdall-telemetry" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

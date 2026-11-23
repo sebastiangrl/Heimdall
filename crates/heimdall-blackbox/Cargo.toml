@@ -1,0 +1,20 @@
+[package]
+name = "heimdall-blackbox"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+chrono = { workspace = true }
+rusqlite = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }
+dirs = "6"
+
+[dev-dependencies]
+tempfile = "3"

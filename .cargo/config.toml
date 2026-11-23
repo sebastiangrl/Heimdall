@@ -1,0 +1,4 @@
+# Un solo directorio de artefactos en todo el repo (ver docs/PHASE5_VALIDATION_FINAL.md).
+# CARGO_TARGET_DIR en el entorno sigue teniendo prioridad si lo defines.
+[build]
+target-dir = ".cargo-target"

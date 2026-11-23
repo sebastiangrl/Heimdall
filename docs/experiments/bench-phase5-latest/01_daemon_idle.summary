@@ -1,0 +1,4 @@
+=== 01_daemon_idle (300s) ===
+daemon_pid=109403
+daemon: n=297 mean_one_core_pct=5.33 p95=7.00 max=9.00 machine_mean=0.444 rss_mean=98308 max_rss=102300
+db_bytes_start=68272128 db_bytes_end=69615616 delta=1343488

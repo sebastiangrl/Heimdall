@@ -1,0 +1,55 @@
+phase	threads	run	pid	accepted	burst_hits	level	impact	state
+    Finished `release` profile [optimized] target(s) in 0.53s
+warning: direct cast of function item into an integer
+   --> src/main.rs:124:46
+    |
+124 |         libc::signal(libc::SIGINT, on_signal as libc::sighandler_t);
+    |                                              ^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(function_casts_as_integer)]` on by default
+help: first cast to a pointer `as *const ()`
+    |
+124 |         libc::signal(libc::SIGINT, on_signal as *const () as libc::sighandler_t);
+    |                                              ++++++++++++
+
+warning: direct cast of function item into an integer
+   --> src/main.rs:125:47
+    |
+125 |         libc::signal(libc::SIGTERM, on_signal as libc::sighandler_t);
+    |                                               ^^^^^^^^^^^^^^^^^^^^^
+    |
+help: first cast to a pointer `as *const ()`
+    |
+125 |         libc::signal(libc::SIGTERM, on_signal as *const () as libc::sighandler_t);
+    |                                               ++++++++++++
+
+warning: `phantom` (bin "phantom") generated 2 warnings (run `cargo fix --bin "phantom" -p phantom` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.09s
+2026-11-23T00:40:50.349758Z  INFO heimdall_daemon: heimdall-daemon listening on /home/sebastian/.local/share/heimdall/heimdall.sock
+=== hilos=1 (1 corrida) ===
+thread_sweep	1	1	75755	1	4	event	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-adabd3f7-3604-4190-971a-753f053efc70.json
+=== hilos=2 (1 corrida) ===
+thread_sweep	2	1	75910	1	5	event	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-1a8e6e43-10f1-47ee-8a08-90cc70792937.json
+=== hilos=4 (1 corrida) ===
+thread_sweep	4	1	76161	1	4	anomaly	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-ccac8217-73e4-4aef-a28c-99bbdc52e045.json
+=== configuración estándar, repetición 1/5 ===
+standard_4t	4	1	76385	1	4	anomaly	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-ada0b004-a214-4892-b34a-09bc5396f173.json
+=== configuración estándar, repetición 2/5 ===
+standard_4t	4	2	76700	1	4	anomaly	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-6bff0076-577e-44bf-8878-3a0cab5d68e6.json
+=== configuración estándar, repetición 3/5 ===
+standard_4t	4	3	76776	1	4	anomaly	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-9517130b-2dec-421c-a0fc-fbba5e91ff96.json
+=== configuración estándar, repetición 4/5 ===
+standard_4t	4	4	76926	1	4	event	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-7443b19d-ede2-419d-8963-8169eecefd4e.json
+=== configuración estándar, repetición 5/5 ===
+standard_4t	4	5	77075	1	5	event	none	closed
+  exportado: /mnt/datos/Heimdall/docs/experiments/phantom-export-a3558141-e4fb-4602-a75b-0ae4d447e3cb.json
+
+Log: /mnt/datos/Heimdall/docs/experiments/phantom-repro-20261122-194048.tsv
+RESULTADO: 5/5 + barrido hilos OK

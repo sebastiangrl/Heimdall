@@ -1,0 +1,16 @@
+[package]
+name = "heimdall-profiles"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Clasificación de actividad y preferencias de usuario"
+
+[dependencies]
+heimdall-core = { path = "../heimdall-core" }
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+dirs = "6"
+uuid = { workspace = true }

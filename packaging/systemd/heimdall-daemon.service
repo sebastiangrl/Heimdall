@@ -1,0 +1,13 @@
+[Unit]
+Description=Heimdall background system monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/heimdall-daemon
+Restart=on-failure
+RestartSec=3
+Environment=RUST_LOG=heimdall_daemon=info
+
+[Install]
+WantedBy=default.target

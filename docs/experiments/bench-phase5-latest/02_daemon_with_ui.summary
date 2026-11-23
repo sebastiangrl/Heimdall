@@ -1,0 +1,5 @@
+=== 02_daemon_with_ui (300s) ===
+daemon_pid=110899 desktop_pid=110917
+daemon: n=298 mean_one_core_pct=5.34 p95=6.00 max=28.00 machine_mean=0.445 rss_mean=99575 max_rss=103480
+desktop: n=298 mean_one_core_pct=10.78 p95=25.00 max=41.00 machine_mean=0.898 rss_mean=200272 max_rss=205396
+db_bytes_delta=188416
